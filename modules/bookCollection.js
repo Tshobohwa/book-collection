@@ -4,26 +4,26 @@ class BookCollection {
   }
 
   displayBooks() {
-    const bookContainer = document.querySelector(".books-container");
-    bookContainer.innerHTML = "";
+    const bookContainer = document.querySelector('.books-container');
+    bookContainer.innerHTML = '';
     this.bookArray.forEach((book) => {
       bookContainer.insertAdjacentHTML(
-        "beforeend",
+        'beforeend',
         `
         <div class="book-details" id="book-${book.id}">
           <p>"${book.title}" by ${book.author}</p> 
           <button class="remove" type="button" id="remove-${book.id}">Remove</button>
-        </div>`
+        </div>`,
       );
     });
 
     if (this.bookArray.length !== 0) {
-      bookContainer.style.border = "solid 3px #000000";
-    } else bookContainer.style.border = "none";
+      bookContainer.style.border = 'solid 3px #000000';
+    } else bookContainer.style.border = 'none';
   }
 
   storeInLocalBrowser() {
-    localStorage.setItem("bookCollectionArray", JSON.stringify(this.bookArray));
+    localStorage.setItem('bookCollectionArray', JSON.stringify(this.bookArray));
   }
 
   removeBook(book) {
@@ -44,7 +44,7 @@ class BookCollection {
         author,
         id: this.bookArray.length,
       });
-      titleInput.value = authorInput.value = "";
+      titleInput.value = authorInput.value = '';
       this.storeInLocalBrowser();
       this.displayBooks();
     }
