@@ -6,16 +6,22 @@ import {
   navBar,
   bookContainer,
   DateAndTime,
-} from './dist/dom.js';
+} from './modules/dom.js';
 
-import { BookCollection } from './dist/bookCollection.js';
+import {
+  addBook,
+  removeBook,
+  displayBooks,
+  bookArray,
+} from './modules/bookCollection.js';
 
 const { DateTime } = require('luxon');
 
-const bookCollection = new BookCollection([]);
+displayBooks();
+
 addButton.addEventListener(
   'click',
-  bookCollection.addBook.bind(bookCollection, titleInput, authorInput),
+  addBook.bind(null, titleInput, authorInput),
 );
 
 navBar.addEventListener('click', (e) => {
@@ -36,10 +42,11 @@ sections.forEach((section) => {
 bookContainer.addEventListener('click', (e) => {
   if (e.target.classList.contains('remove')) {
     const removeBtn = e.target;
-    const book = bookCollection.bookArray.find(
-      (book) => book.id === removeBtn.id.split('-')[1],
+
+    const book = bookArray.find(
+      (book) => book.id === +removeBtn.id.split('-')[1],
     );
-    bookCollection.removeBook(book);
+    removeBook(book);
   }
 });
 
