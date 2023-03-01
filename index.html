@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script defer src="./dist/bundle.js" type="module"></script>
+    <title>Awesome books</title>
+</head>
+
+<body class="body">
+    <header class="app-header">
+        <nav class="nav-Bar">
+            <p class="nav-title">Awesomebooks</p>
+            <ul class="nav-ul">
+                <li><a class="nav-link" href="#book-list">List</a></li>
+                <li><a class="nav-link" href="#add-book">Add book</a></li>
+                <li><a class="nav-link" href="#contact-info">Contact</a></li>
+            </ul>
+        </nav>
+        <p class="date-and-time"></p>
+    </header>
+    <section id="book-list" class="section">
+        <h2>Awesome Books</h2>
+        <div class="books-container"></div>
+    </section>
+    <section id="add-book" class="section">
+        <div class="inputs">
+            <hr>
+            <h2>Add new book</h2>
+            <input type="text" placeholder="title" id="title-input">
+            <input type="text" placeholder="Author" id="author-input">
+            <button class="add-button" type="button">Add</button>
+        </div>
+    </section>
+    <section id="contact-info" class="section">
+        <h2>Contact Information</h2>
+        <p>Do you have any questions? or you just want to say "Hello" You can reach us out at:</p>
+        <ul class="contact-ul">
+            <li>Email : awesomebooks@gmail.com</li>
+            <li>Phone no: +2547123456789</li>
+            <li>Location: Nairobi, Kenya</li>
+        </ul>
+    </section>
+    <footer>
+        <p>&copy;Awesomebooks</p>
+    </footer>
+</body>
+
+</html>
